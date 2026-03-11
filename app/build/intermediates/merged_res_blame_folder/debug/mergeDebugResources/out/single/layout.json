@@ -1,0 +1,14 @@
+[
+    {
+        "merged": "C:\\Users\\ynara\\.gradle\\daemon\\8.9\\com.ynara.hinduflipclock.app-mergeDebugResources-39:\\layout\\activity_main.xml",
+        "source": "C:\\Users\\ynara\\.gradle\\daemon\\8.9\\com.ynara.hinduflipclock.app-main-42:\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\ynara\\.gradle\\daemon\\8.9\\com.ynara.hinduflipclock.app-mergeDebugResources-39:\\layout\\activity_settings.xml",
+        "source": "C:\\Users\\ynara\\.gradle\\daemon\\8.9\\com.ynara.hinduflipclock.app-main-42:\\layout\\activity_settings.xml"
+    },
+    {
+        "merged": "com.ynara.hinduflipclock.app-mergeDebugResources-39:/layout/activity_settings.xml",
+        "source": "com.ynara.hinduflipclock.app-main-42:/layout/activity_settings.xml"
+    }
+]

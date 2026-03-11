@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="background">#0A0A0A</color>
+    <color name="card_bg">#1A1A1A</color>
+    <color name="card_shadow">#000000</color>
+    <color name="digit_color">#FFAA00</color>
+    <color name="separator_color">#333333</color>
+    <color name="date_color">#CCCCCC</color>
+    <color name="weather_color">#87CEEB</color>
+    <color name="hindu_gold">#FFD700</color>
+    <color name="festival_color">#FF6B6B</color>
+    <color name="divider_color">#333333</color>
+    <color name="white">#FFFFFF</color>
+</resources>

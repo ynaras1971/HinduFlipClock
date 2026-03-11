@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.HinduFlipClock" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">#FFAA00</item>
+        <item name="colorPrimaryVariant">#CC8800</item>
+        <item name="colorOnPrimary">#000000</item>
+        <item name="colorSecondary">#FFD700</item>
+        <item name="android:windowBackground">@color/background</item>
+        <item name="android:statusBarColor">#000000</item>
+        <item name="android:navigationBarColor">#000000</item>
+    </style>
+</resources>

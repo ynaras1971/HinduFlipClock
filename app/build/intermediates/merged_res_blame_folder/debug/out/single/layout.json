@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "com.ynara.hinduflipclock.app-mergeDebugResources-39:/layout/activity_main.xml",
+        "source": "com.ynara.hinduflipclock.app-main-42:/layout/activity_main.xml"
+    },
+    {
+        "merged": "com.ynara.hinduflipclock.app-mergeDebugResources-39:/layout/activity_settings.xml",
+        "source": "com.ynara.hinduflipclock.app-main-42:/layout/activity_settings.xml"
+    }
+]
