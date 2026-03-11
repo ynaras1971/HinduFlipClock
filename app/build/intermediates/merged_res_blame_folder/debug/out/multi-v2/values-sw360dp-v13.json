@@ -1,0 +1,19 @@
+{
+    "logs": [
+        {
+            "outputFile": "com.ynara.hinduflipclock.app-mergeDebugResources-38:/values-sw360dp-v13/values-sw360dp-v13.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\ynara\\.gradle\\caches\\9.0.0\\transforms\\b3d4180040040dff12a8a6a3879c7979\\transformed\\preference-1.2.1\\res\\values-sw360dp-v13\\values-sw360dp-v13.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "71",
+                        "endOffsets": "122"
+                    }
+                }
+            ]
+        }
+    ]
+}
