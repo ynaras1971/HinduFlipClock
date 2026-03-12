@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.ScrollView;
@@ -53,6 +54,9 @@ public final class ActivitySettingsBinding implements ViewBinding {
   public final EditText etColorWeather;
 
   @NonNull
+  public final LinearLayout layoutQuietTimes;
+
+  @NonNull
   public final RadioButton rbCelsius;
 
   @NonNull
@@ -63,6 +67,15 @@ public final class ActivitySettingsBinding implements ViewBinding {
 
   @NonNull
   public final Spinner spinnerChime;
+
+  @NonNull
+  public final Spinner spinnerQuietEnd;
+
+  @NonNull
+  public final Spinner spinnerQuietStart;
+
+  @NonNull
+  public final Switch swQuietHours;
 
   @NonNull
   public final View vSwatchClock;
@@ -81,10 +94,11 @@ public final class ActivitySettingsBinding implements ViewBinding {
       @NonNull Switch cbChimes, @NonNull TextInputEditText etApiKey,
       @NonNull TextInputEditText etCity, @NonNull EditText etColorClock,
       @NonNull EditText etColorDate, @NonNull EditText etColorPanchang,
-      @NonNull EditText etColorWeather, @NonNull RadioButton rbCelsius,
-      @NonNull RadioButton rbFahrenheit, @NonNull RadioGroup rgUnits, @NonNull Spinner spinnerChime,
-      @NonNull View vSwatchClock, @NonNull View vSwatchDate, @NonNull View vSwatchPanchang,
-      @NonNull View vSwatchWeather) {
+      @NonNull EditText etColorWeather, @NonNull LinearLayout layoutQuietTimes,
+      @NonNull RadioButton rbCelsius, @NonNull RadioButton rbFahrenheit,
+      @NonNull RadioGroup rgUnits, @NonNull Spinner spinnerChime, @NonNull Spinner spinnerQuietEnd,
+      @NonNull Spinner spinnerQuietStart, @NonNull Switch swQuietHours, @NonNull View vSwatchClock,
+      @NonNull View vSwatchDate, @NonNull View vSwatchPanchang, @NonNull View vSwatchWeather) {
     this.rootView = rootView;
     this.btnPreviewChime = btnPreviewChime;
     this.btnSave = btnSave;
@@ -95,10 +109,14 @@ public final class ActivitySettingsBinding implements ViewBinding {
     this.etColorDate = etColorDate;
     this.etColorPanchang = etColorPanchang;
     this.etColorWeather = etColorWeather;
+    this.layoutQuietTimes = layoutQuietTimes;
     this.rbCelsius = rbCelsius;
     this.rbFahrenheit = rbFahrenheit;
     this.rgUnits = rgUnits;
     this.spinnerChime = spinnerChime;
+    this.spinnerQuietEnd = spinnerQuietEnd;
+    this.spinnerQuietStart = spinnerQuietStart;
+    this.swQuietHours = swQuietHours;
     this.vSwatchClock = vSwatchClock;
     this.vSwatchDate = vSwatchDate;
     this.vSwatchPanchang = vSwatchPanchang;
@@ -186,6 +204,12 @@ public final class ActivitySettingsBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.layoutQuietTimes;
+      LinearLayout layoutQuietTimes = ViewBindings.findChildViewById(rootView, id);
+      if (layoutQuietTimes == null) {
+        break missingId;
+      }
+
       id = R.id.rbCelsius;
       RadioButton rbCelsius = ViewBindings.findChildViewById(rootView, id);
       if (rbCelsius == null) {
@@ -207,6 +231,24 @@ public final class ActivitySettingsBinding implements ViewBinding {
       id = R.id.spinnerChime;
       Spinner spinnerChime = ViewBindings.findChildViewById(rootView, id);
       if (spinnerChime == null) {
+        break missingId;
+      }
+
+      id = R.id.spinnerQuietEnd;
+      Spinner spinnerQuietEnd = ViewBindings.findChildViewById(rootView, id);
+      if (spinnerQuietEnd == null) {
+        break missingId;
+      }
+
+      id = R.id.spinnerQuietStart;
+      Spinner spinnerQuietStart = ViewBindings.findChildViewById(rootView, id);
+      if (spinnerQuietStart == null) {
+        break missingId;
+      }
+
+      id = R.id.swQuietHours;
+      Switch swQuietHours = ViewBindings.findChildViewById(rootView, id);
+      if (swQuietHours == null) {
         break missingId;
       }
 
@@ -235,8 +277,9 @@ public final class ActivitySettingsBinding implements ViewBinding {
       }
 
       return new ActivitySettingsBinding((ScrollView) rootView, btnPreviewChime, btnSave, cbChimes,
-          etApiKey, etCity, etColorClock, etColorDate, etColorPanchang, etColorWeather, rbCelsius,
-          rbFahrenheit, rgUnits, spinnerChime, vSwatchClock, vSwatchDate, vSwatchPanchang,
+          etApiKey, etCity, etColorClock, etColorDate, etColorPanchang, etColorWeather,
+          layoutQuietTimes, rbCelsius, rbFahrenheit, rgUnits, spinnerChime, spinnerQuietEnd,
+          spinnerQuietStart, swQuietHours, vSwatchClock, vSwatchDate, vSwatchPanchang,
           vSwatchWeather);
     }
     String missingId = rootView.getResources().getResourceName(id);

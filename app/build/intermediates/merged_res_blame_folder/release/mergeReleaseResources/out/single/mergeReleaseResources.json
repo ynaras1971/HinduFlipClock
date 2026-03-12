@@ -1,18 +1,22 @@
 [
     {
-        "merged": "com.ynara.hinduflipclock.app-release-40:/mipmap_ic_launcher.xml.flat",
-        "source": "com.ynara.hinduflipclock.app-main-41:/mipmap/ic_launcher.xml"
+        "merged": "C:\\Users\\ynara\\.gradle\\daemon\\8.9\\com.ynara.hinduflipclock.app-release-40:\\mipmap_ic_launcher_round.xml.flat",
+        "source": "C:\\Users\\ynara\\.gradle\\daemon\\8.9\\com.ynara.hinduflipclock.app-main-41:\\mipmap\\ic_launcher_round.xml"
     },
     {
         "merged": "com.ynara.hinduflipclock.app-release-40:/layout_activity_settings.xml.flat",
         "source": "com.ynara.hinduflipclock.app-main-41:/layout/activity_settings.xml"
     },
     {
-        "merged": "com.ynara.hinduflipclock.app-release-40:/layout_activity_main.xml.flat",
-        "source": "com.ynara.hinduflipclock.app-main-41:/layout/activity_main.xml"
+        "merged": "C:\\Users\\ynara\\.gradle\\daemon\\8.9\\com.ynara.hinduflipclock.app-release-40:\\mipmap_ic_launcher.xml.flat",
+        "source": "C:\\Users\\ynara\\.gradle\\daemon\\8.9\\com.ynara.hinduflipclock.app-main-41:\\mipmap\\ic_launcher.xml"
     },
     {
-        "merged": "com.ynara.hinduflipclock.app-release-40:/mipmap_ic_launcher_round.xml.flat",
-        "source": "com.ynara.hinduflipclock.app-main-41:/mipmap/ic_launcher_round.xml"
+        "merged": "C:\\Users\\ynara\\.gradle\\daemon\\8.9\\com.ynara.hinduflipclock.app-release-40:\\layout_activity_settings.xml.flat",
+        "source": "C:\\Users\\ynara\\.gradle\\daemon\\8.9\\com.ynara.hinduflipclock.app-main-41:\\layout\\activity_settings.xml"
+    },
+    {
+        "merged": "C:\\Users\\ynara\\.gradle\\daemon\\8.9\\com.ynara.hinduflipclock.app-release-40:\\layout_activity_main.xml.flat",
+        "source": "C:\\Users\\ynara\\.gradle\\daemon\\8.9\\com.ynara.hinduflipclock.app-main-41:\\layout\\activity_main.xml"
     }
 ]

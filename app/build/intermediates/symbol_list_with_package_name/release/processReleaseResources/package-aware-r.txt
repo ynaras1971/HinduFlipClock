@@ -3413,6 +3413,7 @@ id jumpToEnd
 id jumpToStart
 id labeled
 id layout
+id layoutQuietTimes
 id left
 id leftPanel
 id leftToRight
@@ -3603,6 +3604,8 @@ id spacer
 id special_effects_controller_view_tag
 id spinner
 id spinnerChime
+id spinnerQuietEnd
+id spinnerQuietStart
 id spline
 id split_action_bar
 id spread
@@ -3624,6 +3627,7 @@ id stretch
 id submenuarrow
 id submit_area
 id supportScrollUp
+id swQuietHours
 id switchWidget
 id tabMode
 id tag_accessibility_actions

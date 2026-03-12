@@ -166,6 +166,106 @@
             android:text="Preview Chime"
             android:textSize="13sp" />
 
+        <!-- ── Quiet Hours ── -->
+        <View android:layout_width="match_parent" android:layout_height="1dp"
+            android:background="#333333" android:layout_marginVertical="16dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Quiet Hours"
+            android:textColor="@color/hindu_gold"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="4dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Silence chimes while you sleep"
+            android:textColor="#777777"
+            android:textSize="11sp"
+            android:layout_marginBottom="12dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="12dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Enable quiet hours"
+                android:textColor="@color/date_color"
+                android:textSize="14sp" />
+
+            <Switch
+                android:id="@+id/swQuietHours"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true" />
+
+        </LinearLayout>
+
+        <!-- Start time row -->
+        <LinearLayout
+            android:id="@+id/layoutQuietTimes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="10dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Silence from (bedtime)"
+                    android:textColor="@color/date_color"
+                    android:textSize="14sp" />
+
+                <Spinner
+                    android:id="@+id/spinnerQuietStart"
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/date_color" />
+
+            </LinearLayout>
+
+            <!-- End time row -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="4dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Resume at (wake time)"
+                    android:textColor="@color/date_color"
+                    android:textSize="14sp" />
+
+                <Spinner
+                    android:id="@+id/spinnerQuietEnd"
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/date_color" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
         <!-- ── Colors ── -->
         <View android:layout_width="match_parent" android:layout_height="1dp"
             android:background="#333333" android:layout_marginVertical="16dp" />

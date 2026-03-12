@@ -24,12 +24,16 @@ id etColorPanchang
 id etColorWeather
 id flipClock
 id guideline
+id layoutQuietTimes
 id leftPanel
 id rbCelsius
 id rbFahrenheit
 id rgUnits
 id rightPanel
 id spinnerChime
+id spinnerQuietEnd
+id spinnerQuietStart
+id swQuietHours
 id tvBattery
 id tvDate
 id tvFestivals
