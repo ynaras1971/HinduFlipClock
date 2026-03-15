@@ -56,11 +56,15 @@ object HinduCalendar {
         val paksha = if (tithiNum <= 15) "Shukla" else "Krishna"
         val tithiName = TITHI[tithiNum]
 
-        // Sidereal solar longitude → masa
+        // Sidereal solar longitude → masa (Amavasyanta system)
+        // In Amavasyanta the month runs Shukla 1 → Krishna 15 (Amavasya).
+        // During Krishna paksha the masa is the same as the preceding Shukla paksha,
+        // which is one solar month behind the current Sun sign.
         val ayanamsa = 23.85
         val siderealSun = ((sunLon - ayanamsa) % 360 + 360) % 360
         val solarMonth = (siderealSun / 30).toInt().coerceIn(0, 11)
-        val masaName = MASA[solarMonth]
+        val masaIdx = if (tithiNum > 15) (solarMonth + 11) % 12 else solarMonth
+        val masaName = MASA[masaIdx]
 
         // Samvatsara: reference VS 2082 → index 38, year 2025
         val gYear = cal.get(Calendar.YEAR)
@@ -70,7 +74,7 @@ object HinduCalendar {
         val svIdx = ((vsYear - 2044) % 60 + 60) % 60
         val samvatsaraName = SAMVATSARA[svIdx]
 
-        val festivals = festivals(solarMonth + 1, tithiNum)
+        val festivals = festivals(masaIdx + 1, tithiNum)
 
         return Panchang(
             samvatsara = "$samvatsaraName Samvatsara",
@@ -133,24 +137,28 @@ object HinduCalendar {
     private fun festivals(masa: Int, tithi: Int): List<String> {
         val list = mutableListOf<String>()
 
-        // Universal markers
+        // Universal markers (every month)
         when (tithi) {
-            15 -> list.add("Purnima")
-            30 -> list.add("Amavasya")
-            11, 26 -> list.add("Ekadashi")
-            8, 23  -> list.add("Ashtami")
+            15       -> list.add("Purnima")
+            30       -> list.add("Amavasya")
+            11, 26   -> list.add("Ekadashi")
+            8,  23   -> list.add("Ashtami")
+            13, 28   -> list.add("Pradosha")
+            4        -> list.add("Vinayaka Chaturthi")
+            19       -> list.add("Sankashti Chaturthi")
+            29       -> list.add("Masik Shivaratri")
         }
 
         // Month-specific
         when (masa) {
             1  -> when (tithi) { // Chaitra
-                1  -> list.add("Ugadi / Gudi Padwa / Hindu New Year")
+                1  -> list.add("Ugadi / Gudi Padwa / Hindu New Year / Chaitra Navratri Begins")
                 9  -> list.add("Ram Navami")
                 15 -> list.add("Hanuman Jayanti")
             }
             2  -> when (tithi) { // Vaisakha
                 3  -> list.add("Akshaya Tritiya")
-                15 -> list.add("Narasimha Jayanti") // Vaisakha Purnima
+                15 -> list.add("Narasimha Jayanti")
             }
             3  -> when (tithi) { // Jyeshtha
                 15 -> list.add("Vat Purnima")
@@ -160,28 +168,42 @@ object HinduCalendar {
                 15 -> list.add("Guru Purnima")
             }
             5  -> when (tithi) { // Shravana
-                4  -> list.add("Ganesh Chaturthi (some regions)")
+                5  -> list.add("Nag Panchami")
                 15 -> list.add("Raksha Bandhan")
             }
             6  -> when (tithi) { // Bhadrapada
                 4  -> list.add("Ganesh Chaturthi")
-                23 -> list.add("Janmashtami")
+                14 -> list.add("Ganesh Visarjan / Anant Chaturdashi")
                 15 -> list.add("Onam / Bhadra Purnima")
+                23 -> list.add("Janmashtami")
             }
             7  -> when (tithi) { // Ashwin
-                1  -> list.add("Navratri Begins / Ghatasthapana")
+                1  -> list.add("Sharad Navratri Begins / Ghatasthapana")
                 10 -> list.add("Dussehra / Vijayadashami")
                 15 -> list.add("Sharad Purnima / Kojagiri")
+                30 -> list.add("Mahalaya Amavasya / Pitru Moksha Amavasya")
             }
             8  -> when (tithi) { // Kartik
+                1  -> list.add("Govardhan Puja / Annakut")
+                2  -> list.add("Bhai Dooj")
+                6  -> list.add("Chhath Puja")
+                11 -> list.add("Dev Uthani Ekadashi / Tulsi Vivah")
+                15 -> list.add("Kartik Purnima / Dev Diwali")
+                19 -> list.add("Karva Chauth")
                 28 -> list.add("Dhanteras")
                 29 -> list.add("Narak Chaturdashi / Choti Diwali")
                 30 -> list.add("Diwali / Deepavali")
-                2  -> list.add("Bhai Dooj")
-                11 -> list.add("Dev Uthani Ekadashi")
-                15 -> list.add("Kartik Purnima / Dev Diwali")
+            }
+            9  -> when (tithi) { // Margashirsha
+                11 -> list.add("Vaikunta Ekadashi / Geeta Jayanti")
+                15 -> list.add("Dattatreya Jayanti")
+            }
+            10 -> when (tithi) { // Pausha
+                11 -> list.add("Putrada Ekadashi")
             }
             11 -> when (tithi) { // Magha
+                5  -> list.add("Vasant Panchami / Saraswati Puja")
+                7  -> list.add("Ratha Saptami")
                 15 -> list.add("Maghi Purnima")
                 29 -> list.add("Maha Shivaratri")
             }
@@ -190,6 +212,12 @@ object HinduCalendar {
                 15 -> list.add("Holi")
                 29 -> list.add("Maha Shivaratri (some regions)")
             }
+        }
+
+        // Remove Masik Shivaratri on the month when Maha Shivaratri is already shown
+        // (Magha tithi 29 and Phalguna tithi 29 are already specifically labelled above)
+        if ((masa == 11 || masa == 12) && tithi == 29) {
+            list.remove("Masik Shivaratri")
         }
 
         return list
